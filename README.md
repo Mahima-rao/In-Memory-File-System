@@ -21,20 +21,15 @@ To set up the project on your local machine, follow these steps:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/file-system-api.git
+    git clone https://github.com/Mahima-Rao/In-Memory-File-System.git
     ```
 
-2. **Navigate to the project directory**:
-    ```bash
-    cd file-system-api
-    ```
-
-3. **Install the required dependencies**:
+2. **Install the required dependencies**:
     ```bash
     pip install -r requirements.txt
     ```
 
-4. **Run the FastAPI application**:
+3. **Run the FastAPI application**:
     ```bash
     uvicorn main:app --reload
     ```
