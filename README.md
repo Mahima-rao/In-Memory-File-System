@@ -51,6 +51,8 @@ You can use Postman to interact with the API. Here are some sample commands for 
         "name": "Documents"
     }
     ```
+For this solution, we will have to create a Drive "C" first, then two folders, "Documents" and "OtherFolder" and a file "file1.txt" for all the functions to work properly.
+
 
 ### Write Content to File
 - **Method**: `POST`
