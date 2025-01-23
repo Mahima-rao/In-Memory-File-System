@@ -35,10 +35,12 @@ class FileSystem:
             raise FileSystemError("Invalid entity type.")
 
         if entity_type == "drive":
-            if name in self.drives:
-                raise FileSystemError(f"Drive {name} already exists.")
+            # Ensure the path is empty (root level) and the drive does not already exist
+            if path.strip("/") or name in self.drives:
+                raise FileSystemError(f"Drives can only be created at the root level and must have a unique name.")
             self.drives[name] = Drive(name)
         else:
+            # For folders and files, find the parent folder
             parent = self._find_entity(path)
             if not isinstance(parent, Folder):
                 raise FileSystemError(f"Cannot create {entity_type} under a non-folder entity.")
@@ -100,6 +102,7 @@ class FileSystem:
         parent = self._find_entity("/" + "/".join(parts[:-1]))
         name = parts[-1]
         return parent, name
+
 
 
 # API Models
